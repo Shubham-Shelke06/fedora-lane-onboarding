@@ -1,0 +1,19 @@
+---
+- name: Developer Onboarding Complete
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Display onboarding summary
+      ansible.builtin.debug:
+        msg:
+          - "Developer: {{ developer_name }}"
+          - "Team: {{ team_name }}"
+          - "GitLab Project: {{ gitlab_project }}"
+          - "Database: {{ database_name }}"
+          - "Status: Onboarding completed successfully"
+
+    - name: Display welcome message
+      ansible.builtin.debug:
+        msg: "Welcome aboard, {{ developer_name }}!"
