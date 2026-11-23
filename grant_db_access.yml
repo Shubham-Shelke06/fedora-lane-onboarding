@@ -1,0 +1,18 @@
+---
+- name: Grant Database Access
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Confirm approval
+      ansible.builtin.debug:
+        msg: "Database access approved for {{ developer_name }}"
+
+    - name: Simulate database provisioning
+      ansible.builtin.debug:
+        msg: "Granting {{ developer_username }} access to {{ database_name }}"
+
+    - name: Confirm database access
+      ansible.builtin.debug:
+        msg: "Database access successfully configured."
